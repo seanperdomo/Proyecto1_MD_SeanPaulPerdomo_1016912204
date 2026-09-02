@@ -18,7 +18,9 @@ conn.close()
 
 # Se grafican los datos y se guardan localmente
 
-plt.plot(df['pl_rade'],df['pl_bmasse'],'o')
+plt.plot(np.log(df['pl_rade']),np.log(df['pl_bmasse']),'o',markersize=2)
+plt.plot([np.log(2), np.log(2)],[np.log(df['pl_bmasse']).min(), np.log(df['pl_bmasse']).max()],'--', c='orange', label='Límite de radio para gigantes gaseosos')
+plt.plot([np.log(df['pl_rade']).min(), np.log(df['pl_rade']).max()], [1,1], '--', c='orange', label='Límite de masa para gigantes gaseosos')
 plt.xlabel(r'$R_\oplus$')
 plt.ylabel(r'$M_\oplus$')
 plt.grid(True)
