@@ -42,12 +42,21 @@ conn.close()
 
 # Se grafican los datos y se guardan localmente
 
-plt.plot(np.log(df['pl_rade']),np.log(df['pl_bmasse']),'o',markersize=2)
-plt.plot([np.log(2), np.log(2)],[np.log(df['pl_bmasse']).min(), np.log(df['pl_bmasse']).max()],'--', c='orange', label='Límite de radio para gigantes gaseosos')
-plt.plot([np.log(df['pl_rade']).min(), np.log(df['pl_rade']).max()], [1,1], '--', c='orange', label='Límite de masa para gigantes gaseosos')
-plt.xlabel(r'$R_\oplus$')
-plt.ylabel(r'$M_\oplus$')
+logrs = np.log10(df['pl_rade'])
+logms = np.log10(df['pl_bmasse'])
+x = np.linspace(np.log(2), logrs.max(), 100)
+y1 = 1 * np.ones_like(x)
+y2 = logms.max() * np.ones_like(x)
+
+
+plt.plot(logrs, logms, 'o', c='red', markersize=2)
+plt.fill_between(x, y1, y2, color = 'orange', label='Región de gigantes gaseosos', alpha = 0.4)
+plt.xlabel(r'$\log{R_\oplus}$')
+plt.ylabel(r'$\log{M_\oplus}$')
+plt.legend()
 plt.grid(True)
 plt.title("Masa vs. Radio")
 plt.savefig('resultado.png')
 EOF
+
+python3 analisis_visual.py
