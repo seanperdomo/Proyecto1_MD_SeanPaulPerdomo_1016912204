@@ -1,3 +1,6 @@
 # Proyecto1_MD_SeanPaulPerdomo_1016912204
 
 En este proyecto se toman las masas y los radios de varios exoplanetas a través de la base de datos de exoplanetas de la NASA utilizando el lenguaje de SQL. Posterior a ello, se crea una base de datos local utilizando Python. Esto se logra a través de una conexión, y colocándole un título a la tabla que quedó descarga dentro del .csv en el paso anterior. Luego de cerrar la conexión, se realiza una gráfica de Masa vs. Radio en la que se adiciona la región correspondiente a gigantes gaseosos. La región que no está pintada corresponde a Super Tierras, Planetas rocosos densos o Mini Neptunos. El valor del radio para gigantes gaseosos fue tomado como 2 radios terrestres, mientras que la masa fue tomada como 10 radios terrestres (Ikoma y Kobayashi, 2025). En realidad, estos valores varian, pues se han observado planetas rocosos con más de 20 masas terrestres, pero es un buen estimado acorde a los resultados disponibles hasta la fecha.
+
+### REFERENCIAS:
+Ikoma, M. y Kobayashi, H. (2025). Formation of giant planets. arXiv. <https://arxiv.org/html/2504.04090v1>
