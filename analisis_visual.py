@@ -20,7 +20,7 @@ conn.close()
 
 logrs = np.log10(df['pl_rade'])
 logms = np.log10(df['pl_bmasse'])
-x = np.linspace(np.log(2), logrs.max(), 100)
+x = np.linspace(np.log10(2), logrs.max(), 100)
 y1 = 1 * np.ones_like(x)
 y2 = logms.max() * np.ones_like(x)
 
